@@ -11,7 +11,7 @@ pub fn prompt(ps: &str) -> Result<String, io::Error> {
     print!("{}", ps);
     try!(io::stdout().flush());
     try!(io::stdin().read_line(&mut result));
-    Ok(result)
+    Ok(result.trim().to_string())
 }
 
 //take a file name as a string and returns the contents of the file
